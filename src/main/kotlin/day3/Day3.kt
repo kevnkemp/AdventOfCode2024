@@ -1,4 +1,4 @@
-package day3
+package org.kevnkemp.day3
 
 import org.kevnkemp.helper.getFile
 import org.kevnkemp.helper.measureExecutionTime
