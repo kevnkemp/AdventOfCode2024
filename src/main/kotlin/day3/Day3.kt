@@ -32,10 +32,9 @@ private fun part2(input: String) {
     val splitInput = input.split(DO_REGEX.toRegex())
     val mulRegex = MUL_REGEX.toRegex()
     val dontRegex = DONT_REGEX.toRegex()
-    var totalSum = 0
-    splitInput.forEach { fragment ->
+    val totalSum = splitInput.sumOf { fragment ->
         val dosOnly = fragment.split(dontRegex)
-        totalSum += mulRegex.findAll(dosOnly.first()).map {
+        mulRegex.findAll(dosOnly.first()).map {
             (it.groups[2]?.value?.toInt() ?: 0) * (it.groups[3]?.value?.toInt() ?: 0)
         }.sum()
     }
